@@ -48,6 +48,7 @@ Transaction TransactionCsvRepository::GetByID(int id)
 
 std::vector<Transaction> TransactionCsvRepository::GetUserTransactions(int userId, int num)
 {
+
     std::vector<Transaction> transactions;
     for (size_t i = 0; i < m_csvFile.GetNumberOfRows(); ++i)
     {
@@ -57,7 +58,7 @@ std::vector<Transaction> TransactionCsvRepository::GetUserTransactions(int userI
             break;
         }
 
-        if (std::stoi(row[COLUMN_FROM]) == userId || std::stoi(row[COLUMN_TO]) == userId)
+        if (std::stoi(row[COLUMN_FROM]) == userId )
         {
             transactions.push_back(Transaction{
                 std::stoi(row[COLUMN_ID]),

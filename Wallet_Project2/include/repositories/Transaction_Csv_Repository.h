@@ -16,8 +16,8 @@ private:
     CSVFile m_csvFile;
 
 const std::string COLUMN_ID        = "id";
-const std::string COLUMN_FROM       = "from_user_id";
-const std::string COLUMN_TO         = "to_user_id";
+const std::string COLUMN_FROM       = "userId";
+const std::string COLUMN_TO         = "targetUserId";
 const std::string COLUMN_AMOUNT     = "balance";
 const std::string COLUMN_TIME  = "date";
 

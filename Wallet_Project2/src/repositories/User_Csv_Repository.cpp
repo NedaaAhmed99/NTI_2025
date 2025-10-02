@@ -65,7 +65,7 @@ User UserCsvRepository::AddUser(const User &newUser)
 
 void UserCsvRepository::Update(int id, const User &updateUser)
 {
-
+    std::string idd = COLUMN_USERNAME;
     std::string username = COLUMN_USERNAME;
     std::string balance = COLUMN_BALANCE;
     std::string Password = COLUMN_PASSWORD;
@@ -75,13 +75,14 @@ void UserCsvRepository::Update(int id, const User &updateUser)
 
         CSVRow &row = m_csvFile[i]; // not const reference
         if (std::stoi(row[COLUMN_ID]) == id)
-        {
+        {   
+            row[idd] = updateUser.getId();
             row[username] = updateUser.getUsername();
             row[Password] = updateUser.getPassword();
             row[balance] = std::to_string(updateUser.getBalance());
             row[date] = updateUser.getCreatedAt();
             Sync();
-            return;
+            
         }
     }
     throw std::runtime_error("User not found for update");

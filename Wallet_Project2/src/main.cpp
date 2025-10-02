@@ -6,8 +6,9 @@
 
 int main() {
 
-    CSVFile o ;
-o.Print();
+
+
+
     Application app("data/users.csv","data/transactions.csv");
    
     MenuManager manager(&app, nullptr);

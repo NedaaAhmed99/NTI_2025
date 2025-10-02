@@ -1,7 +1,7 @@
 #include "Transaction_Entity.h"
 
-Transaction::Transaction(int id, int sourceUserId, int desUserId, double amount, std::string date)
-    : m_id(id), m_userId(sourceUserId), m_targetuserId(desUserId), m_amount(amount), m_date(date) {}
+Transaction::Transaction(int id, int user, int targetuser, double amount, std::string date)
+    : m_id(id), m_userId(user), m_targetuserId(targetuser), m_amount(amount), m_date(date) {}
 
 Transaction::~Transaction() {}
 
@@ -27,7 +27,6 @@ double Transaction::getAmount() const
 
 std::string Transaction::getDate() const
 {
-
   return m_date;
 }
 
